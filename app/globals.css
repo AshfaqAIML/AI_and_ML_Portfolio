@@ -1,0 +1,145 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme — default. RGB triplets so Tailwind's <alpha-value> works. */
+  --c-void: 5 7 13;
+  --c-panel: 11 15 28;
+  --c-panel-2: 16 21 41;
+  --c-hairline: 28 34 54;
+  --c-ink: 232 236 246;
+  --c-ink-muted: 154 163 184;
+  --c-ink-faint: 92 101 128;
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html.light {
+  --c-void: 246 247 251;
+  --c-panel: 255 255 255;
+  --c-panel-2: 240 242 248;
+  --c-hairline: 222 226 236;
+  --c-ink: 13 16 28;
+  --c-ink-muted: 84 92 112;
+  --c-ink-faint: 140 147 166;
+}
+
+* {
+  border-color: rgb(var(--c-hairline));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--c-void));
+  color: rgb(var(--c-ink));
+  font-family: var(--font-body), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus — accessibility floor */
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--c-void));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-hairline));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f6fed;
+}
+
+/* Dot-grid backdrop used behind hero / section breaks */
+.bg-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(154, 163, 184, 0.16) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+html.light .bg-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(13, 16, 28, 0.12) 1px,
+    transparent 1px
+  );
+}
+
+/* Glass panel utility */
+.glass {
+  background: rgba(16, 21, 41, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+html.light .glass {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(13, 16, 28, 0.06);
+}
+
+/* Gradient text */
+.text-signal-gradient {
+  background-image: linear-gradient(135deg, #2f6fed 0%, #22d3ee 55%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section number / eyebrow label, monospace, used where order is real (timeline) */
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* Custom cursor dot (desktop only, see CustomCursor.tsx) */
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  border-radius: 9999px;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .cursor-dot {
+    display: none;
+  }
+}
