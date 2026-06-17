@@ -59,4 +59,19 @@ export const projects: Project[] = [
     github: "https://github.com/Dar-Ishfaq-1",
     demo: "",
   },
+  {
+    id: "text-to-sql",
+    title: "Text-to-SQL Agent",
+    subtitle: "Natural language to SQL queries using Gemini AI",
+    description:
+      "A full-stack AI application that converts natural language questions into SQL queries using Google Gemini AI, executes them safely on a SQLite database, and displays results in real time through a React-based web interface. Features schema-aware SQL generation with SELECT-only safety validation and Flask RESTful backend.",
+    tags: ["Gemini AI", "LLM", "Text-to-SQL", "Flask", "React", "SQLite", "Natural Language Processing"],
+    metrics: [
+      { label: "Backend", value: "Flask + Python" },
+      { label: "Frontend", value: "React + Tailwind" },
+    ],
+    github: "https://github.com/DarAshfaqDev/Text_to_SQL_Agent",
+    demo: "",
+    featured: false,
+  },
 ];

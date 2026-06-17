@@ -133,20 +133,21 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mb-10 lg:mb-0 shrink-0"
           >
-            <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
+            <div className="relative mx-auto w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
               <div className="absolute inset-0 rounded-full bg-signal-gradient opacity-20 blur-3xl animate-pulse-slow" />
-              <div className="relative h-full w-full rounded-full border-2 border-hairline overflow-hidden ring-2 ring-signal-cyan/20">
+              <div className="absolute inset-0 rounded-full bg-signal-cyan opacity-10 blur-2xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
+              <div className="relative h-full w-full rounded-full border-2 border-hairline overflow-hidden ring-2 ring-signal-cyan/20 shadow-glow-blue">
                 <Image
                   src={site.profileImage}
                   alt={site.name}
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                  sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 320px"
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 rounded-full bg-panel border border-hairline px-4 py-2 shadow-glass">
-                <span className="font-mono text-[11px] text-signal-cyan">AI/ML</span>
+              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full bg-panel border border-hairline px-5 py-2 shadow-glass backdrop-blur-sm">
+                <span className="font-mono text-xs text-signal-cyan tracking-wider">AI / ML Engineer</span>
               </div>
             </div>
           </motion.div>

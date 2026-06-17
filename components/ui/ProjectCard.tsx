@@ -2,7 +2,7 @@
 // components/ui/ProjectCard.tsx
 import { ElementType } from "react";
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Brain, Search, Flower2, CloudSun } from "lucide-react";
+import { Github, ExternalLink, Brain, Search, Flower2, CloudSun, MessageSquareText } from "lucide-react";
 import { Project } from "@/types";
 import { Badge } from "@/components/ui/GlassCard";
 
@@ -11,6 +11,7 @@ const projectIcons: Record<string, ElementType> = {
   "medical-retrieval": Search,
   "flower-clustering": Flower2,
   "weather-analytics": CloudSun,
+  "text-to-sql": MessageSquareText,
 };
 
 export function ProjectCard({ project }: { project: Project }) {

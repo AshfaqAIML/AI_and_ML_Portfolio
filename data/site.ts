@@ -44,7 +44,7 @@ export const site = {
     ],
   },
   stats: [
-    { label: "Projects Shipped", value: 12 },
+    { label: "Projects Shipped", value: 13 },
     { label: "Technologies", value: 28 },
     { label: "Research Projects", value: 3 },
     { label: "Certifications", value: 6 },
