@@ -19,7 +19,7 @@ export const site = {
   location: "Kashmir, India",
   email: "dar1.ishfaq36@gmail.com",
   phone: "", // confirm + add your number — see note above
-  resumeUrl: "/resume/Ishfaq_Dar_Resume.pdf",
+  resumeUrl: "/resume/Ishfaq_Dar_AI_ML_Resume.pdf",
   profileImage: "/images/profile.png",
   social: {
     github: "https://github.com/Dar-Ishfaq-1",
