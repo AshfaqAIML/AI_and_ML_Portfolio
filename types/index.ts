@@ -56,8 +56,13 @@ export interface Certification {
   title: string;
   issuer: string;
   year: string;
+  date: string;
   icon: string;
   imageUrl?: string;
+  certId?: string;
+  duration?: string;
+  topics?: string;
+  verifiedBy?: string;
 }
 
 export interface Recommendation {
