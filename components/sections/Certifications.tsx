@@ -1,10 +1,13 @@
 "use client";
 // components/sections/Certifications.tsx
+import { useState } from "react";
 import * as Icons from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { certifications } from "@/data/certifications";
+import Image from "next/image";
+import { X } from "lucide-react";
 
 function Icon({ name, size = 20 }: { name: string; size?: number }) {
   const Cmp = (Icons as unknown as Record<string, Icons.LucideIcon>)[name];
@@ -13,6 +16,8 @@ function Icon({ name, size = 20 }: { name: string; size?: number }) {
 }
 
 export function Certifications() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
   return (
     <section id="certifications" className="relative py-28 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
@@ -31,7 +36,10 @@ export function Certifications() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.04 }}
             >
-              <GlassCard className="flex items-start gap-4">
+              <GlassCard
+                className={`flex items-start gap-4 ${cert.imageUrl ? "cursor-pointer" : ""}`}
+                onClick={() => cert.imageUrl && setLightbox(cert.imageUrl)}
+              >
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-panel-2 text-signal-cyan border border-hairline">
                   <Icon name={cert.icon} size={18} />
                 </span>
@@ -48,6 +56,29 @@ export function Certifications() {
           ))}
         </div>
       </div>
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+          >
+            <X size={24} />
+          </button>
+          <div className="relative max-w-3xl max-h-[90vh] w-full h-full" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={lightbox}
+              alt="Certificate"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

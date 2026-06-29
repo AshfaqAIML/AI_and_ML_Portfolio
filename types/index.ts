@@ -57,6 +57,7 @@ export interface Certification {
   issuer: string;
   year: string;
   icon: string;
+  imageUrl?: string;
 }
 
 export interface Recommendation {
