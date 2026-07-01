@@ -4,6 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { site } from "@/data/site";
 
 const username = "AshfaqAIML";
+const cardTheme = "transparent";
 
 export function GithubAnalytics() {
   return (
@@ -19,7 +20,7 @@ export function GithubAnalytics() {
           <GlassCard hover={false} className="overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&bg_color=00000000&title_color=22D3EE&icon_color=2F6FED&text_color=9AA3B8&ring_color=2F6FED`}
+              src={`https://github-profile-summary-cards.vercel.app/api/cards/stats?username=${username}&theme=${cardTheme}`}
               alt={`${site.name} GitHub stats`}
               className="w-full"
               loading="lazy"
@@ -29,8 +30,8 @@ export function GithubAnalytics() {
           <GlassCard hover={false} className="overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://streak-stats.demolab.com?user=${username}&hide_border=true&background=00000000&ring=2F6FED&fire=22D3EE&currStreakLabel=22D3EE&sideLabels=9AA3B8&sideNums=E8ECF6&dates=5C6580`}
-              alt={`${site.name} GitHub streak stats`}
+              src={`https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${username}&theme=${cardTheme}`}
+              alt={`${site.name} language distribution across repos`}
               className="w-full"
               loading="lazy"
             />
@@ -39,16 +40,16 @@ export function GithubAnalytics() {
           <GlassCard hover={false} className="overflow-hidden lg:col-span-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&bg_color=00000000&title_color=22D3EE&text_color=9AA3B8`}
-              alt={`${site.name} top languages`}
-              className="mx-auto"
+              src={`https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${username}&theme=${cardTheme}`}
+              alt={`${site.name} contribution history`}
+              className="w-full"
               loading="lazy"
             />
           </GlassCard>
         </div>
 
         <p className="mt-6 text-center text-xs text-ink-faint">
-          Powered by github-readme-stats — updates automatically, no manual edits needed.
+          Powered by github-profile-summary-cards — updates automatically, no manual edits needed.
         </p>
       </div>
     </section>
