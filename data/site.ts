@@ -23,9 +23,9 @@ export const site = {
   profileImage: "/images/profile.png",
   social: {
     github: "https://github.com/AshfaqAIML",
-    linkedin: "https://www.linkedin.com/in/ishfaq-ahmad-dar-aaa277240/",
+    linkedin: "https://www.linkedin.com/in/ishfaq-dar-aaa277240/",
     leetcode: "https://leetcode.com/Dar-Ishfaq-1/",
-    email: "mailto:dar1.ishfaq36@gmail.com",
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=dar1.ishfaq36@gmail.com",
   },
   seo: {
     title: "Ishfaq Dar — AI / ML Engineer | Computer Vision & Deep Learning",
